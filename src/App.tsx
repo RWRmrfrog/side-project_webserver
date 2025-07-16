@@ -4,9 +4,11 @@ import './App.css';
 
 export default function App() {
   return (
-    <>
-      <NavBar />
+    <div className="app">
+      <div className="main-content">
+        <NavBar />
+      </div>
       <Footer />
-    </>
+    </div>
   );
 }

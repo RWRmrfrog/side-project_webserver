@@ -1,0 +1,7 @@
+@import url("../../App.css");
+
+footer {
+    background-color: var(--accentColor);
+    text-align: center;
+    padding: 1em;
+}

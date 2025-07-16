@@ -20,7 +20,7 @@ const Layout = () => {
         <div className="nav-center">
           <form>
             <input type="search" placeholder="Search" aria-label="Search" className="searchBar" />
-            <button type="submit" className="searchButton"><img src={searchIcon} alt="search icon" className="nav-icons"/></button>
+            <button type="submit" className="searchButton"><img src={searchIcon} alt="search icon" title="Search" width="50px"/></button>
           </form>
         </div>
 

@@ -1,3 +1,6 @@
+@import url("../../App.css");
+
+
 /* Navbar Containers */
 
 .navbar-main {
@@ -6,7 +9,7 @@
   justify-content: space-between;
   position: relative;
   padding: 0 1rem;
-  background-color: rgb(32, 149, 178);
+  background-color: var(--accentColor);
 }
 
 .nav-right {
@@ -67,14 +70,13 @@
 
 .searchBar {
   width: 500px;
-  border: 5px solid lightblue;
-  border-radius: 25px;
-  font-size: 20pt;
+  border: 3px solid var(--outlineColor);
+  border-radius: 25px 0px 0px 25px;
+  font-size: 15pt;
   padding: 10px;
 }
 
 .searchButton {
-  border-radius: 25px;
-  border: 5px solid lightblue;
-  background-color: mediumturquoise;
+  border-radius: 0px 25px 25px 0px;
+  border: 3px solid var(--outlineColor);
 }

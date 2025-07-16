@@ -1,10 +1,34 @@
+/* Color Variables */
+
+:root {
+  --accentColor: #1284a7;
+  --outlineColor: lightblue;
+  --backgroundColor: #282c34;
+  --textColor: white;
+}
+
 body {
-  background-color: #282c34;
-  color: white;
+  background-color: var(--backgroundColor);
+  color: var(--textColor);
   font-family: Sans-Serif;
-  margin: 0;
   padding: 0;
 }
+
 a, a:visited {
-  color: white;
+  color: var(--textColor);
+}
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.main-content {
+  flex: 1;
 }
