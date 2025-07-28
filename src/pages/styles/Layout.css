@@ -80,3 +80,48 @@
   border-radius: 0px 25px 25px 0px;
   border: 3px solid var(--outlineColor);
 }
+
+@media (max-width: 768px) {
+  .navbar-main {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-left ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .nav-center {
+    position: static;
+    transform: none;
+    flex: 1; /* Take remaining space */
+  }
+
+  .nav-center form {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .searchBar {
+    width: 120px; /* Condensed width */
+    border-radius: 25px 0 0 25px;
+    margin: 0;
+  }
+
+  .searchButton {
+    border-radius: 0 25px 25px 0;
+    margin: 0;
+  }
+
+  .nav-icons {
+    width: 40px;
+  }
+
+  .nav-logo {
+    display: none;
+  }
+}
