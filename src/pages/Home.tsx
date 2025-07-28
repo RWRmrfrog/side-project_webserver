@@ -26,8 +26,8 @@ const Home = () => {
       const yPercent = (clientY - innerHeight / 2) / (innerHeight / 2);
       
       // Move background opposite direction with reduced intensity
-      const moveX = xPercent * -30; // Adjust multiplier for intensity
-      const moveY = yPercent * -30;
+      const moveX = xPercent * -200;
+      const moveY = yPercent * -200;
       
       backgroundRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
     };
