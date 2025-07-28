@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import './styles/Home.css';
 
 const Home = () => {
@@ -7,34 +7,12 @@ const Home = () => {
   const [ctaText, setCtaText] = useState('');
   const [showAccentUnderline, setShowAccentUnderline] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
-  const backgroundRef = useRef<HTMLDivElement>(null);
 
   const fullTitle = "Hello. Welcome to Side Project.";
   const fullSubtitle = "A website designed by developers and for developers.";
   const fullCta = "Check out some of our projects and get the latest developments here.";
 
   useEffect(() => {
-    // Mouse parallax effect
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!backgroundRef.current) return;
-      
-      const { clientX, clientY } = e;
-      const { innerWidth, innerHeight } = window;
-      
-      // Calculate mouse position as percentage from center
-      const xPercent = (clientX - innerWidth / 2) / (innerWidth / 2);
-      const yPercent = (clientY - innerHeight / 2) / (innerHeight / 2);
-      
-      // Move background opposite direction with reduced intensity
-      const moveX = xPercent * -200; 
-      const moveY = yPercent * -200;
-      
-      backgroundRef.current.style.transform = `translate(${moveX}px, ${moveY}px)`;
-    };
-
-    // Add mouse move listener
-    window.addEventListener('mousemove', handleMouseMove);
-
     // Initial fade in
     const initialTimer = setTimeout(() => {
       setIsVisible(true);
@@ -82,7 +60,6 @@ const Home = () => {
     }, 4500);
 
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
       clearTimeout(initialTimer);
       clearTimeout(titleTimer);
       clearTimeout(subtitleTimer);
@@ -108,12 +85,6 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      {/* SVG Background Layer */}
-      <div className="svg-background-layer" ref={backgroundRef}></div>
-      
-      {/* Gradient Overlay */}
-      <div className="gradient-overlay"></div>
-      
       <div className={`home-content ${isVisible ? 'visible' : ''}`}>
         <h1 className="home-title">
           {renderTitleWithAccent(titleText)}
