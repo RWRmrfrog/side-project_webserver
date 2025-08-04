@@ -12,6 +12,7 @@
   background-color: var(--accentColor);
 }
 
+
 .nav-right {
   /* Empty for now, keeps the 3-part flex structure */
 }
@@ -83,45 +84,32 @@
 
 @media (max-width: 768px) {
   .navbar-main {
-    flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
   }
 
   .nav-left ul {
-    flex-direction: row;
     flex-wrap: wrap;
   }
 
-  .nav-center {
-    position: static;
-    transform: none;
-    flex: 1; /* Take remaining space */
-  }
-
-  .nav-center form {
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
+  .nav-left li:first-child {
+    display: none;
   }
 
   .searchBar {
-    width: 120px; /* Condensed width */
-    border-radius: 25px 0 0 25px;
-    margin: 0;
+    width: 120px;
+    height: 30px;
+    font-size: 10pt;
   }
 
   .searchButton {
-    border-radius: 0 25px 25px 0;
-    margin: 0;
+    height: 30px;
   }
 
   .nav-icons {
-    width: 40px;
+    width: 30px;
   }
 
-  .nav-logo {
-    display: none;
+  .nav-left li a {
+    padding: 14px 2px;
   }
 }

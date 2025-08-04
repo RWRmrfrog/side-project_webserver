@@ -9,9 +9,9 @@ const Home = () => {
   const [isVisible, setIsVisible] = useState(false);
   const backgroundRef = useRef<HTMLDivElement>(null);
 
-  const fullTitle = "Hello. Welcome to Side Project.";
-  const fullSubtitle = "A website designed by developers and for developers.";
-  const fullCta = "Check out some of our projects and get the latest developments here.";
+  const fullTitle = "Hello. Welcome to Side Project";
+  const fullSubtitle = "A place to share your best work";
+  const fullCta = "Check out some of our projects and get the latest developments here";
 
   useEffect(() => {
     // Mouse parallax effect
