@@ -136,8 +136,6 @@ const Home = () => {
           </p>
         </div>
       </div>
-
-      <div className={`home-background-decoration ${isVisible ? 'visible' : ''}`}></div>
     </div>
   );
 };
