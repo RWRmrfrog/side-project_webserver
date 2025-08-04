@@ -52,7 +52,7 @@
 .nav-left li a {
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding: 14px 14px;
   text-decoration: none;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .searchBar {
-  width: 500px;
+  width: 100%;
   border: 3px solid var(--outlineColor);
   border-radius: 25px 0px 0px 25px;
   font-size: 15pt;
@@ -82,9 +82,10 @@
   border: 3px solid var(--outlineColor);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .navbar-main {
     flex-wrap: wrap;
+    padding: 0 2%;
   }
 
   .nav-left ul {
@@ -96,7 +97,6 @@
   }
 
   .searchBar {
-    width: 120px;
     height: 30px;
     font-size: 10pt;
   }
