@@ -18,7 +18,7 @@ const Layout = () => {
         <div className="nav-center">
           <form>
             <input type="search" placeholder="Search" aria-label="Search" className="searchBar" />
-            <button type="submit" className="searchButton"><FaMagnifyingGlass size="30" className="nav-icons"/></button>
+            <button type="submit" className="searchButton"><FaMagnifyingGlass size="20"/></button>
           </form>
         </div>
 
