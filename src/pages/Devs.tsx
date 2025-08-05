@@ -1,5 +1,6 @@
 import React from 'react';
 import './Styles/Users.css';
+import { FaGithub, FaXTwitter, FaLinkedinIn } from 'react-icons/fa6';
 
 interface Developer {
   id: number;
@@ -97,7 +98,7 @@ const Devs: React.FC = () => {
                     rel="noopener noreferrer"
                     title="GitHub"
                   >
-                    GH
+                    <FaGithub size="25" className="nav-icons"/>
                   </a>
                 )}
                 {developer.social.linkedin && (
@@ -108,7 +109,7 @@ const Devs: React.FC = () => {
                     rel="noopener noreferrer"
                     title="LinkedIn"
                   >
-                    LI
+                    <FaLinkedinIn size="25" className="nav-icons"/>
                   </a>
                 )}
                 {developer.social.twitter && (
@@ -119,7 +120,7 @@ const Devs: React.FC = () => {
                     rel="noopener noreferrer"
                     title="Twitter"
                   >
-                    TW
+                    <FaXTwitter size="25" className="nav-icons"/>
                   </a>
                 )}
               </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import './Styles/Users.css';
+import { FaGithub } from 'react-icons/fa6';
 
 interface Developer {
   id: number;
@@ -96,13 +97,12 @@ const Users: React.FC = () => {
   return (
     <div className="users-container">
       <div className="users-header">
-        <h1 className="users-title">Meet Our Development Team</h1>
+        <h1 className="users-title">Meet </h1>
         <p className="users-subtitle">
-          Talented individuals working together to build amazing digital experiences. 
+          Talented aaaaaaaaindividuals working together to build amazing digital experiences. 
           Each team member brings unique skills and perspectives to create innovative solutions.
         </p>
       </div>
-      
       <div className="developers-grid">
         {developers.map((developer) => (
           <div key={developer.id} className="developer-card">
@@ -134,7 +134,7 @@ const Users: React.FC = () => {
                     rel="noopener noreferrer"
                     title="GitHub"
                   >
-                    GH
+                    <FaGithub size="25" className="nav-icons"/>
                   </a>
                 )}
                 {developer.social.linkedin && (
