@@ -1,10 +1,10 @@
-import { Routes, Route, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Routes, Route,  useLocation, useNavigate } from "react-router-dom"; //Navigate,
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
 import Home from "./pages/Home";
 import Devs from "./pages/Devs";
 import Users from "./pages/Users";
 import NoPage from "./pages/NoPage";
-import { useEffect, type ReactNode } from "react";
+import { useEffect } from "react"; //, type ReactNode
 import Layout from "./pages/Layout";
 
 function LoginPage() {
