@@ -1,5 +1,5 @@
 import React from 'react';
-import './Styles/Users.css';
+import './styles/Users.css';
 import { FaGithub } from 'react-icons/fa6';
 
 interface Developer {
