@@ -39,9 +39,7 @@ export default function AppRoutes() {
         <Route element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="devs" element={<Devs />} />
-            <Route path="users" element={
-                <Users />
-            }/>
+            <Route path="users" element={<Users />}/>
             <Route path="*" element={<NoPage />} />
         </Route>
     </Routes>
