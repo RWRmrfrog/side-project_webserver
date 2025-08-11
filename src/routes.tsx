@@ -23,13 +23,13 @@ function LoginPage() {
   return <Authenticator initialState="signIn" />;
 }
 
-function RequireAuth({ children }: { children: ReactNode  }) {
-  const { route } = useAuthenticator((c) => [c.route]);
-  const isAuthed = route === "authenticated";
-  const location = useLocation();
-  if (!isAuthed) return <Navigate to="/login" state={{ from: location.pathname }} replace />;
-  return children;
-}
+// function RequireAuth({ children }: { children: ReactNode  }) {
+//   const { route } = useAuthenticator((c) => [c.route]);
+//   const isAuthed = route === "authenticated";
+//   const location = useLocation();
+//   if (!isAuthed) return <Navigate to="/login" state={{ from: location.pathname }} replace />;
+//   return children;
+// }
 
 export default function AppRoutes() {
   return (
