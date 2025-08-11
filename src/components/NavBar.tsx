@@ -3,7 +3,7 @@ import { useAuthenticator } from "@aws-amplify/ui-react";
 import "./styles/NavBar.css";
 
 import logoImg from "../assets/SP_Large.png"
-import { FaDev, FaUsers, FaMagnifyingGlass } from 'react-icons/fa6';
+import { FaDev, FaMagnifyingGlass } from 'react-icons/fa6';
 
 export default function NavBar() {
     const { route, signOut } = useAuthenticator((c) => [c.route]);
