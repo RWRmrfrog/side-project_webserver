@@ -27,7 +27,6 @@ export default function NavBar() {
             <nav className="left">
                 <Link to="/"><img src={logoImg} alt="nav logo" className="nav-logo" /></Link>
                 <Link to="/devs"><FaDev size="30" className="nav-icons" /></Link>
-                <Link to="/users"><FaUsers size="30" className="nav-icons" /></Link>
             </nav>
 
             <nav className="center">
