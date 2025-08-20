@@ -37,6 +37,10 @@ header nav {
     background-color: transparent;
 }
 
+.left #home-link {
+    display: none;
+}
+
 /* Logo + icons */
 .nav-logo {
     vertical-align: middle;
@@ -66,20 +70,20 @@ header nav {
 }
 
 .center input {
-    margin-right: 0.5rem;
+    margin-right: 0.2rem;
 }
 
 .searchBar {
     width: 100%;
     border: 3px solid var(--outlineColor);
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px;
     font-size: 15pt;
     padding: 10px;
     outline: none;
 }
 
 .searchButton {
-    border-radius: 0 25px 25px 0;
+    border-radius: 25px;
     border: 3px solid var(--outlineColor);
     width: 60px;
     display: inline-flex;
@@ -107,15 +111,35 @@ header nav {
 @media (max-width: 1024px) {
 
     header {
-        padding: .5rem;
+        padding: 1rem .2rem;
     }
 
    .right button {
         font-size: 10pt;
     }
 
+    .left #home-link {
+        display: block;
+    }
+
+    .left a {
+        padding: 8px 8px;
+    }
+
+    .nav-icons {
+        width: 1.5rem;
+    }
+
+    .center {
+        padding: 5%;
+    }
+
+    .searchBar {
+        font-size: 10pt;
+    }
+
     /* Hide extras by default on small screens */
-    .left>a:first-child, .center {
+    .left>a:first-child {
         display: none;
     }
 }
