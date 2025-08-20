@@ -7,7 +7,8 @@ header {
     align-items: center;
     justify-content: space-between;
 
-    position: relative; /* so .center can be absolutely positioned */
+    position: relative;
+    /* so .center can be absolutely positioned */
 }
 
 header nav {
@@ -96,146 +97,25 @@ header nav {
 }
 
 .right button {
-    padding: 8px 14px;
+    padding: .5rem;
     border: 1px solid var(--outlineColor, #ccc);
     border-radius: 10px;
     background: #fff;
     cursor: pointer;
-}
-
-/* ========= Hamburger (CSS-only) ========= */
-.nav-toggle {
-    position: absolute;
-    opacity: 0;
-    pointer-events: none;
-}
-
-.hamburger {
-    display: none;
-    /* hidden on desktop */
-    align-items: center;
-    justify-content: center;
-    border: 1px solid var(--outlineColor, #ccc);
-    border-radius: 10px;
-    padding: .4rem .6rem;
-    background: #fff;
-    cursor: pointer;
-    user-select: none;
-    line-height: 1;
-    font-size: 1.15rem;
 }
 
 @media (max-width: 1024px) {
 
-    /* Layout spacing + subtle divider */
     header {
-        flex-wrap: wrap;
-        padding: .5rem .75rem;
-        gap: .5rem 0;
-        background: var(--accentColor);
-        border-bottom: 1px solid var(--outlineColor);
+        padding: .5rem;
     }
 
-    .left {
-        flex-wrap: wrap;
-    }
-
-    .left a {
-        padding: 14px 6px;
-    }
-
-    /* Shrink visuals a bit on phones */
-    .nav-logo {
-        width: 190px;
-        height: 54px;
-    }
-
-    .nav-icons {
-        width: 22px;
-        height: 22px;
-    }
-
-    .searchBar {
-        font-size: 14px;
-    }
-
-    .searchButton {
-        width: 52px;
-    }
-
-    /* Make the hamburger obvious and tappable */
-    .hamburger {
-        display: inline-flex;
-        margin-left: auto;
-        width: 42px;
-        height: 42px;
-        border-radius: 9999px;
-        background: #111827;
-        /* dark on light bg */
-        color: #fff;
-        border-color: transparent;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, .08);
+   .right button {
+        font-size: 10pt;
     }
 
     /* Hide extras by default on small screens */
-    .left>a:not(:first-child),
-    .center,
-    .right {
+    .left>a:first-child, .center {
         display: none;
-    }
-
-    /* When toggled ON, reveal them as a friendlier dropdown */
-    .nav-toggle:checked~.left>a:not(:first-child) {
-        display: inline-flex;
-        align-items: center;
-        gap: .35rem;
-        padding: .55rem .7rem;
-        margin-right: .5rem;
-        border: 1px solid var(--outlineColor);
-        border-radius: 9999px;
-        background: #fff;
-        box-shadow: 0 2px 10px rgba(2, 6, 23, 0.05);
-    }
-
-    /* Search panel: full-width card under links */
-    .center {
-        order: 3;
-        width: 100%;
-    }
-
-    .nav-toggle:checked~.center {
-        display: block;
-        padding: .75rem;
-        background: #fff;
-        border: 1px solid var(--outlineColor);
-        border-radius: 16px;
-        box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
-    }
-
-    .nav-toggle:checked~.center form {
-        width: 100%;
-    }
-
-    /* Auth panel: centered wide button */
-    .nav-toggle:checked~.right {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        padding: .6rem;
-        background: #fff;
-        border: 1px solid var(--outlineColor);
-        border-radius: 16px;
-        box-shadow: 0 10px 25px rgba(2, 6, 23, 0.08);
-    }
-
-    .right button {
-        width: 100%;
-        max-width: 520px;
-        padding: .7rem 1rem;
-        border-radius: 12px;
-        font-size: .95rem;
-        background: #111827;
-        color: #fff;
-        border-color: transparent;
     }
 }

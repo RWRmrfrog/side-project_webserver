@@ -20,10 +20,6 @@ export default function NavBar() {
 
     return (
         <header>
-            {/* hamburger toggle (CSS-only) */}
-            <input id="nav-toggle" type="checkbox" className="nav-toggle" />
-            <label htmlFor="nav-toggle" className="hamburger" aria-label="Toggle menu">☰</label>
-
             <nav className="left">
                 <Link to="/"><img src={logoImg} alt="nav logo" className="nav-logo" /></Link>
                 <Link to="/devs"><FaDev size="30" className="nav-icons" /></Link>
