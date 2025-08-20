@@ -25,7 +25,7 @@ const developers: Developer[] = [
     skills: ["React", "Node.js", "TypeScript", "AWS", "C++", "Java", "Python", "Javascript", "C#", "HTML", "CSS", "Modding Games"],
     social: {
       github: "https://github.com/RWRmrfrog",
-      linkedin: "",
+      linkedin: "https://www.linkedin.com/in/ryan-radcliffe-70b9b1343/",
       twitter: "https://x.com/RWRmrfrog"
     },
     initials: "RR"
@@ -50,7 +50,7 @@ const developers: Developer[] = [
     skills: ["Python", "PostgreSQL", "Redis", "Kubernetes", "GraphQL"],
     social: {
       github: "https://github.com/marcusrodriguez",
-      linkedin: "https://linkedin.com/in/marcusrodriguez"
+      linkedin: "https://www.linkedin.com/in/joshua-pechan/"
     },
     initials: "JP"
   }
