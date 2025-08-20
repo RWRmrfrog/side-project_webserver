@@ -1,51 +1,105 @@
 @import url("../../App.css");
 
 .users-container {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: 0 auto;
-  padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1.5rem;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
+
 
 .users-header {
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .users-title {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-weight: 700;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #34d399 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-top: 0.15rem;
+  margin-bottom: 0.15rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .users-subtitle {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(203, 213, 225, 0.9);
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 
 .developers-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .developers-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .developers-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .developer-card {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 24px;
+  padding: 1rem;
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    0 0 0 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
   overflow: hidden;
+  
+  /* Initial state for animation */
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+}
+
+.developer-card.animate-in {
+  animation: slideInFromBottom 0.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-10px) scale(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .developer-card::before {
@@ -54,20 +108,35 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #f5576c);
-  background-size: 300% 100%;
-  animation: gradient-shift 3s ease infinite;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(96, 165, 250, 0.8) 20%, 
+    rgba(192, 132, 252, 0.8) 50%, 
+    rgba(52, 211, 153, 0.8) 80%, 
+    transparent 100%);
+  animation: borderShimmer 3s ease-in-out infinite;
 }
 
-@keyframes gradient-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
+@keyframes borderShimmer {
+  0%, 100% { 
+    opacity: 0.5;
+    transform: translateX(-100%);
+  }
+  50% { 
+    opacity: 1;
+    transform: translateX(100%);
+  }
 }
 
 .developer-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  transform: translateY(-15px) scale(1.03);
+  box-shadow: 
+    0 20px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    0 0 25px rgba(96, 165, 250, 0.2);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 .developer-image-container {
@@ -80,7 +149,7 @@
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 50%, #4facfe 100%);
+  background: linear-gradient(135deg, #60a5fa 0%, #c084fc 50%, #34d399 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,13 +157,38 @@
   color: white;
   font-weight: bold;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  border: 4px solid rgba(255, 255, 255, 0.3);
-  transition: all 0.3s ease;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.developer-image::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #60a5fa, #c084fc, #34d399, #60a5fa);
+  z-index: -1;
+  animation: rotate 3s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.developer-card:hover .developer-image::before {
+  opacity: 0.7;
 }
 
 .developer-card:hover .developer-image {
   transform: scale(1.1);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .developer-info {
@@ -102,49 +196,57 @@
 }
 
 .developer-name {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #2d3748;
-  margin-bottom: 0.5rem;
+  color: #f1f5f9;
+  margin-bottom: 0.25rem;
+  background: linear-gradient(135deg, #60a5fa 0%, #c084fc 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .developer-role {
-  font-size: 1rem;
-  color: #667eea;
+  font-size: 0.85rem;
+  color: #94a3b8;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
 .developer-bio {
-  color: #4a5568;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
 }
 
 .developer-skills {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 0.4rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .skill-tag {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  color: #e2e8f0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
   font-weight: 500;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .skill-tag:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: scale(1.05) translateY(-2px);
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(192, 132, 252, 0.2));
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  border-color: rgba(96, 165, 250, 0.3);
 }
 
 .developer-social {
@@ -154,22 +256,26 @@
 }
 
 .social-link {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: #e2e8f0;
   text-decoration: none;
   font-weight: bold;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .social-link:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 16px rgba(102, 126, 234, 0.4);
+  transform: translateY(-2px) scale(1.05);
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.2), rgba(192, 132, 252, 0.2));
+  box-shadow: 0 4px 8px rgba(96, 165, 250, 0.2);
+  border-color: rgba(96, 165, 250, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -178,15 +284,16 @@
   }
   
   .users-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
   
   .developers-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-template-columns: 1fr !important;
+    gap: 1rem;
+    max-width: 400px;
   }
   
   .developer-card {
-    padding: 1.5rem;
+    padding: 1.25rem;
   }
 }

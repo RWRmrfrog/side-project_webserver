@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './styles/Dev.css';
 import { FaGithub, FaXTwitter, FaLinkedinIn } from 'react-icons/fa6';
 
@@ -32,44 +32,60 @@ const developers: Developer[] = [
   },
   {
     id: 2,
-    name: "Devarion",
-    role: "Devy Developer",
-    bio: "UI/UX enthusiast with a keen eye for design and user experience. Specializes in creating beautiful, responsive interfaces that users love.",
-    skills: ["React", "Vue.js", "CSS3", "Figma", "JavaScript"],
+    name: "Spencer Kotrosa",
+    role: "Front-End Developer",
+    bio: "I design things that work until they don't.",
+    skills: ["HTML", "CSS", "JavaScript", "C++", "Unreal Engine", "Blender", "Blockbench", "Substance", "Photoshop"],
     social: {
-      github: "https://github.com/sarahchen",
-      linkedin: "https://linkedin.com/in/sarahchen"
+      github: "https://github.com/xTear0/",
+      linkedin: "https://www.linkedin.com/in/spencer-kotrosa-0a6109266/"
     },
-    initials: "D2"
+    initials: "SK"
   },
   {
     id: 3,
-    name: "Danny Devito Deverino",
-    role: "Devy Developer",
-    bio: "Database optimization expert and API architect. Enjoys building robust, secure backend systems that can handle massive scale.",
+    name: "Josh Pechan",
+    role: "Back-End Developer",
+    bio: "I make everything else, and it never works.",
     skills: ["Python", "PostgreSQL", "Redis", "Kubernetes", "GraphQL"],
     social: {
       github: "https://github.com/marcusrodriguez",
       linkedin: "https://linkedin.com/in/marcusrodriguez"
     },
-    initials: "D3"
+    initials: "JP"
   }
 ];
 
 const Devs: React.FC = () => {
+  const cardsRef = useRef<HTMLDivElement>(null);
+  
+  useEffect(() => {
+    // Trigger card animations when component mounts
+    const cards = document.querySelectorAll('.developer-card');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.classList.add('animate-in');
+      }, index * 200); // Stagger the animations
+    });
+  }, []);
+
   return (
     <div className="users-container">
+      
       <div className="users-header">
-        <h1 className="users-title">Meet Our Development Team</h1>
+        <h1 className="users-title">Developer Team</h1>
         <p className="users-subtitle">
-          Talented individuals working together to build amazing digital experiences. 
-          Each team member brings unique skills and perspectives to create innovative solutions.
+          The talented individuals who make this site possible.
         </p>
       </div>
       
-      <div className="developers-grid">
-        {developers.map((developer) => (
-          <div key={developer.id} className="developer-card">
+      <div className="developers-grid" ref={cardsRef}>
+        {developers.map((developer, index) => (
+          <div 
+            key={developer.id} 
+            className="developer-card"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
             <div className="developer-image-container">
               <div className="developer-image">
                 {developer.initials}
@@ -82,8 +98,8 @@ const Devs: React.FC = () => {
               <p className="developer-bio">{developer.bio}</p>
               
               <div className="developer-skills">
-                {developer.skills.map((skill, index) => (
-                  <span key={index} className="skill-tag">
+                {developer.skills.map((skill, skillIndex) => (
+                  <span key={skillIndex} className="skill-tag">
                     {skill}
                   </span>
                 ))}
