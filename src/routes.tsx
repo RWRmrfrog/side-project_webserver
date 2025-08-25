@@ -2,6 +2,7 @@ import { Routes, Route, useLocation, useNavigate } from "react-router-dom"; //, 
 import { Authenticator, useAuthenticator } from "@aws-amplify/ui-react";
 import Home from "./pages/Home";
 import Devs from "./pages/Devs";
+import User from "./pages/User";
 import NoPage from "./pages/NoPage";
 import { useEffect } from "react"; //, type ReactNode
 import Layout from "./pages/Layout";
@@ -38,6 +39,7 @@ export default function AppRoutes() {
       <Route element={<Layout />}>
         <Route index element={<Home />} />
         <Route path="devs" element={<Devs />} />
+        <Route path="user" element={<User />} />
         <Route path="*" element={<NoPage />} />
       </Route>
     </Routes>
