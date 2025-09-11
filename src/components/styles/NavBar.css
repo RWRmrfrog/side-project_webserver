@@ -2,13 +2,14 @@
 
 /* ========= Base (desktop) ========= */
 header {
-    background-color: var(--accentColor);
+    background: linear-gradient(var(--outlineColor), var(--accentColor));
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     position: relative;
     /* so .center can be absolutely positioned */
+    filter: drop-shadow(0px 50px 20px rgba(0, 0, 0, 0.5));
 }
 
 header nav {
@@ -123,11 +124,18 @@ header nav {
     }
 
     .left a {
-        padding: 8px 8px;
+        padding: 4px 4px;
     }
 
     .nav-icons {
         width: 1.5rem;
+    }
+
+    .nav-logo {
+        vertical-align: middle;
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
     }
 
     .center {
