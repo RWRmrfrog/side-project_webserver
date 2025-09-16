@@ -21,7 +21,7 @@
   bottom: -50%;
   width: 200%;
   height: 200%;
-  background-image: url('/assets/flowchart_home_background_cyan.svg');
+  background-image: url('../../assets/flowchart_home_background_cyan.svg');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

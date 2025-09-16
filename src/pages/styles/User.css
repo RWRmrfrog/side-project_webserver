@@ -9,7 +9,7 @@
 
 /* Header banner */
 .banner {
-  background: url('/assets/banner.jpg') center/cover no-repeat;
+  background: url('../../assets/banner.jpg') center/cover no-repeat;
   height: 200px; 
   position: relative;
 }
