@@ -5,6 +5,7 @@
   --outlineColor: #2dd4bf;
   --backgroundColor: #111827;
   --textColor: #f9fafb;
+  --background-svg: url('assets/flowchart_home_background_cyan.svg');
 }
 
 body {
